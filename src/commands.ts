@@ -535,5 +535,12 @@ export const focusFolding = (plugin: MyPluginInterface): Command => ({
             folds: foldPositions,
             lines: view.editor.lineCount(),
         })
+        editor.scrollIntoView(
+            {
+                from: editor.getCursor('from'),
+                to: editor.getCursor('to')
+            },
+            true
+        );
     }
 })
